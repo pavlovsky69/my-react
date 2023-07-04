@@ -5,7 +5,7 @@ import Image from "./components/Image/image"
 const App = () => {
     return (
         <>
-            <h1>Simpson Familys</h1>
+            <h1>Simpson Family</h1>
             <div className='simpsons'>
 
                 <div>
