@@ -1,6 +1,7 @@
 import PostComponent from './PostComponent/PostComponent.jsx';
+import styles from '../components/PostComponent/PostComponent.module.scss'
 import { useEffect, useState } from 'react';
-import { logDOM } from '@testing-library/react';
+import ButtonInfo from "./PostComponent/InfoPost/ButtonInfo/ButtonInfo";
 
 export const PostContainer = () => {
     const [ posts, setPosts ] = useState();
@@ -23,9 +24,10 @@ export const PostContainer = () => {
     const handleClick = (value) => {
         // alert(`Posts details is ${value}`);
         return(
-            console.log(`${value}`)
+            (`${value}`)
         )
     };
+
 
     return (
         <>
