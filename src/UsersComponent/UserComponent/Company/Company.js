@@ -8,4 +8,4 @@ const Company = () => {
     );
 };
 
-export default Company;
+export {Company};

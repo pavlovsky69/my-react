@@ -1,24 +1,25 @@
 import './App.css';
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
+import {UsersComponent} from "./UsersComponent/UsersComponent";
 
 const App =()=> {
-  const [users, setUsers]=useState(null);
+  const [users, setUsers]=useState([]);
+
   useEffect(()=>{
     fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
         .then((users)=>{
           setUsers(users);
         })
-        .finally(()=>{
-          console.log('Promise Finished')
-            }
-        );
   },[]);
+
+
+
   return (
     <div className="App">
-      <h1>{users}</h1>
+        {users.map(user=><UsersComponent key={user.id} user={user}/>)}
     </div>
   );
 }
 
-export default App;
+export {App};
