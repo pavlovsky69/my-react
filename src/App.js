@@ -3,16 +3,16 @@ import {useState} from "react";
 import {Launches} from "./components/Launches/Launches";
 import {Users} from "./components/Users/Users";
 import {UserPosts} from "./components/Users/Posts/Posts";
-import {Posts} from "./components/Posts/Post";
+import {Posts} from "./components/Posts/Posts";
 
 const App = () => {
     const [userId, setUserId] = useState(null);
     return (
         <div>
-            <Posts/>
+            {/*<Posts/>*/}
             {/*<Launches/>*/}
-            {/*<Users setUserId={setUserId}/>*/}
-            {/*{userId && <UserPosts userId={userId}/>}*/}
+            <Users setUserId={setUserId}/>
+            {userId && <UserPosts userId={userId}/>}
         </div>
     );
 };
