@@ -1,11 +1,19 @@
 import React from 'react';
+import App from "../../../App";
 
-const UserDetails = () => {
+const UserDetails = (props) => {
+const {users}
+    {
+        users.map((user, id))=>{
+
+    }
+    }
     return (
-        <div>
-            
-        </div>
-    );
+        <>
+            <div>
+            </div>
+
+        </>);
 };
 
 export default UserDetails;
