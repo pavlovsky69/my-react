@@ -4,11 +4,12 @@ import {UserAddress} from "./UserAddress/UserAddress";
 import {UserDetails} from "./UserDetails/UserDetails";
 
 const User = ({user}) => {
+    const {id, name, username, email, address, company, phone, website} = user;
     return (
         <div>
-            <UserDetails key={user.id} user={user}/>
-            <UserAddress key={user.id} user={user}/>
-            {/*<Company/>*/}
+            <UserDetails data={{id, name, username, email, phone, website}} />
+            <UserAddress address={address}/>
+            <Company company={company}/>
         </div>
     );
 };

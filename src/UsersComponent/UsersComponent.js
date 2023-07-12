@@ -1,10 +1,10 @@
 import React from 'react';
 import {User} from "./UserComponent/User";
 
-const UsersComponent = ({user}) => {
+const UsersComponent = ({users}) => {
     return (
         <div>
-            <User key={user.id} user={user}/>
+            {users.map(user=><User key={user.id} user={user}/>)}
         </div>
     );
 };

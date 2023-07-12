@@ -18,7 +18,7 @@ const App =()=> {
 
   return (
     <div className="App">
-        {users.map(user=><UsersComponent key={user.id} user={user}/>)}
+        <UsersComponent users={users}/>
     </div>
   );
 }
