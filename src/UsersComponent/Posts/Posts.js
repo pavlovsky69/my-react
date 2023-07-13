@@ -1,16 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import {Post} from "./Post/Post";
 
-const Posts = ({UserId}) => {
+const Posts = ({userId}) => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/users/${UserId}/posts`).then(value => value.json()).then(posts => setPosts(posts))
+        fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`).then(value => value.json()).then(posts => setPosts(posts))
     },
-        [UserId])
+        [userId])
     return (
         <div>
-            {posts.map(post => <Post key={post.id} post={post} UserId={UserId}/>)}
+            {posts.map(post => <Post key={post.id} post={post} />)}
         </div>
     );
 };

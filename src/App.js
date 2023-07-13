@@ -5,18 +5,18 @@ import {UsersComponent} from "./UsersComponent/UsersComponent";
 import {Posts} from "./UsersComponent/Posts/Posts";
 
 
-const App =()=> {
-    const [UserId, setUserId] = useState(null)
-  return (
-    <div className="App">
-        <div>
-        <UsersComponent setUserId={setUserId}/>
-        <hr/>
-        {UserId &&<Posts UserId={UserId}/>}
+const App = () => {
+    const [userId, setUserId] = useState (null)
+    return (
+        <div className="App">
+            <div>
+                <UsersComponent setUserId={setUserId}/>
+                <hr/>
+                {userId && <Posts userId={userId}/>}
+            </div>
         </div>
-    </div>
 
-  );
+    );
 }
 
 export {App};
