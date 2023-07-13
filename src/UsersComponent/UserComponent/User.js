@@ -8,9 +8,9 @@ const User = ({user, setUserId}) => {
     return (
         <div>
             <div>{name}</div>
-            {/*<UserDetails data={{id, name, username, email, phone, website}}/>*/}
-            {/*<UserAddress address={address}/>*/}
-            {/*<Company company={company}/>*/}
+            <UserDetails data={{id, name, username, email, phone, website}}/>
+            <UserAddress address={address}/>
+            <Company company={company}/>
             <button onClick={ () => setUserId(id)}>getPosts</button>
         </div>
     );

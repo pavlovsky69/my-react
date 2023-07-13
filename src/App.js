@@ -10,7 +10,6 @@ const App = () => {
         <div className="App">
             <div>
                 <UsersComponent setUserId={setUserId}/>
-                <hr/>
                 {userId && <Posts userId={userId}/>}
             </div>
         </div>
