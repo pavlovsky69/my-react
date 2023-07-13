@@ -7,7 +7,6 @@ import {Posts} from "./PostComponent/Posts/Posts";
 
 const App =()=> {
     const [userId, setUserId] = useState(null)
-
   return (
     <div className="App">
         <UsersComponent setUserId={setUserId}/>
