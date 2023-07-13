@@ -1,10 +1,12 @@
 import './App.css';
 import React, {useEffect, useState} from "react";
 import {UsersComponent} from "./UsersComponent/UsersComponent";
+import {Posts} from "./Posts/Posts";
 
 
 const App =()=> {
   const [users, setUsers]=useState([]);
+  const [userId, setUserId]=useState(null)
 
   useEffect(()=>{
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -17,8 +19,11 @@ const App =()=> {
 
   return (
     <div className="App">
-        <UsersComponent users={users}/>
+        <UsersComponent setUserId={setUserId} users={users} />
+        <hr/>
+        {userId && <Posts userId={userId}/>}
     </div>
+
   );
 }
 
