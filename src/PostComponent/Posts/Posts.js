@@ -7,12 +7,12 @@ const [posts, setPosts]=useState([]);
 useEffect(()=>{
     fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
         .then(value=>value.json())
-        .then(post => setPosts(post))
+        .then(posts => setPosts(posts))
     },[userId])
 
     return (
         <div>
-            {posts.map(post=><Post key={post.id} post={post}/>)}
+            {posts.map(post=><Post key={post.id} post={post} userId={userId}/>)}
         </div>
     );
 };

@@ -10,7 +10,7 @@ const User = ({user, setUserId}) => {
             <UserDetails data={{id, name, username, email, phone, website}} />
             <UserAddress address={address}/>
             <Company company={company}/>
-            <button onClick={()=>setUserId(id)}>Get Posts</button>
+            <button onClick={()=>setUserId(id)}>Gets Posts</button>
         </div>
     );
 };
