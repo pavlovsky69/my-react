@@ -8,7 +8,7 @@ const CarContainer = () => {
     const [carForUpdate, setCarForUpdate] = useState(null);
     return (
         <div>
-            <CarForm setOnSave={setOnSave} carForUpdate={carForUpdate}/>
+            <CarForm setOnSave={setOnSave} carForUpdate={carForUpdate} setCarForUpdate={setCarForUpdate}/>
             <hr/>
             <Cars onSave={onSave} setOnSave={setOnSave} setCarForUpdate={setCarForUpdate}/>
         </div>

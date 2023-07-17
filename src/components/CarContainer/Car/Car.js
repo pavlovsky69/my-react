@@ -15,7 +15,7 @@ const Car = ({car, setOnSave, setCarForUpdate}) => {
             <div>brand:{brand}</div>
             <div>price:{price}</div>
             <div>year:{year}</div>
-            <button onClick={setCarForUpdate(car)}>update</button>
+            <button onClick={ ()=> setCarForUpdate(car)}>update</button>
             <button onClick={deleteCar}>delete</button>
 
         </div>

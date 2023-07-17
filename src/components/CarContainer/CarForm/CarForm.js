@@ -4,20 +4,20 @@ import {type} from "@testing-library/user-event/dist/type";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {carValidator} from "../../validators/carValidator";
 
-const CarForm = ({setOnSave, carForUpdate}) => {
+const CarForm = ({setOnSave, carForUpdate, setCarForUpdate}) => {
         const {register, handleSubmit, reset, formState: {errors, isValid}, setValue} = useForm ({
-            mode:'all',
-            resolver:joiResolver(carValidator)
+            mode: 'all',
+            resolver: joiResolver (carValidator)
         });
 
-
-        useEffect(()=> {
-            if (carForUpdate){
-                setValue('brand', carForUpdate.brand, {shouldValidate:true})
-                setValue('price', carForUpdate.price, {shouldValidate:true})
-                setValue('year', carForUpdate.year, {shouldValidate:true})
-            }
-        },[carForUpdate])
+        useEffect (() => {
+                if (carForUpdate) {
+                    setValue ('brand', carForUpdate.brand, {shouldValidate: true})
+                    setValue ('price', carForUpdate.price, {shouldValidate: true})
+                    setValue ('year', carForUpdate.year, {shouldValidate: true})
+                }
+            },
+            [carForUpdate]);
 
         const save = (data) => {
             console.log (data);
@@ -37,13 +37,29 @@ const CarForm = ({setOnSave, carForUpdate}) => {
                         reset ()
                     }
                 )
+        };
+        const update = (car) => {
+            fetch (`http://owu.linkpc.net/carsAPI/v1/cars/${carForUpdate.id}`,
+                {
+                    headers: {'content-type': 'application/json'}, method: 'PUT',
+                    body: JSON.stringify (car)
+                }
+            )
+                .then (value => value.json ())
+                .then (() => {
+                        setOnSave (prev => !prev)
+                        setCarForUpdate (null)
+                        reset ()
+                    }
+                )
+
         }
 
         return (
             <div>
-                <form onSubmit={handleSubmit (save)}>
+                <form onSubmit={handleSubmit (!carForUpdate ? save : update)}>
                     <label> <input type="text" placeholder={'brand'} {...register ('brand',
-                        {required:true})}/>
+                        {required: true})}/>
                     </label>
                     {errors.brand && <span>{errors.brand.message}</span>}
                     <label> <input type="text" placeholder={'price'} {...register ('price',
@@ -57,14 +73,14 @@ const CarForm = ({setOnSave, carForUpdate}) => {
                     {errors.price && <span>{errors.price.message}</span>}
                     <label> <input type="text" placeholder={'year'} {...register ('year',
                         {
-                            valueAsNumber:true,
+                            valueAsNumber: true,
                             // required:true,
                             // min:{value:1990, message:'year must be gte 1990'},
                             // max: {value:new Date().getFullYear(), message:'year must be lte present Date'}
                         })}/>
                     </label>
                     {errors.year && <span>{errors.year.message}</span>}
-                    <button disabled={!isValid}>Save</button>
+                    <button disabled={!isValid}>{!carForUpdate ? 'Save' : 'Update'}</button>
                 </form>
             </div>
         );
