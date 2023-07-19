@@ -1,11 +1,10 @@
 import './App.css';
-import {CarContainer} from "./components/CarContainer/CarConteiner";
-import {UserContainer} from "./components/UserContainer/UserContainer";
+import {CarContainer} from "./components/CarContainer/CarContainer";
 
-function App() {
+const App=()=> {
   return (
     <div className="App">
-        <UserContainer/>
+      <CarContainer/>
     </div>
   );
 }
