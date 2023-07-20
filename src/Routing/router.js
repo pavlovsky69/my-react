@@ -4,6 +4,7 @@ import {AppRoutes} from "./AppRoutes";
 import {Todos} from "../components/Todos/Todos";
 import {Albums} from "../components/Albums/Albums";
 import {Comments} from "../components/Comments/Comments";
+import {Post} from "../components/Posts/Post/Post";
 
 const AppLayout = () => (
     <>
@@ -31,7 +32,13 @@ export const router = createBrowserRouter ([
                 },
             {
                     path: AppRoutes.COMMENTS,
-                    element: <Comments/>
+                    element: <Comments/>,
+                children:[
+                    {
+                        path:':postId',
+                        element:<Post/>
+                    }
+                    ]
                 },
 
         ]
