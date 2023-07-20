@@ -1,7 +1,7 @@
 import React from 'react';
 import {AppRoutes} from "../../Routing/AppRoutes";
 import {Link} from "react-router-dom";
-
+import './Navbar.css'
 
 const Navbar = () => {
 
@@ -24,13 +24,7 @@ const Navbar = () => {
         },
     ]
     return (
-        <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: 'yellow',
-            height: 40
-        }}>
+        <div className={'NavbarItems'}>
             {buttons.map ((btn, idx) => <Link className={'NavBarButton'} key={idx} to={btn.route}>
                 {btn.label}
             </Link>)}

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import './Comment.css'
 
 const Comment = ({comment}) => {
     const {postId, id, name, email, body}=comment;
@@ -11,9 +12,8 @@ const Comment = ({comment}) => {
             <div>email:{email}</div>
             <div>body:{body}</div>
 
-            {/*<button onClick={()=> navigate('posts/1', {relative:'path'})}> Get Post</button>*/}
-            <Link to={`/posts/${postId}`}>More about post
-            </Link>
+            {/*<Link className={'buttonComments'} to={`${AppRoutes.POST}${postId}`}>More about post</Link>*/}
+            <Link className={'buttonComments'} to={`/posts/${postId}`}>More about post</Link>
         </div>
     );
 };
