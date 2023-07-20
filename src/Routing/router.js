@@ -35,9 +35,9 @@ export const router = createBrowserRouter ([
                     element: <Comments/>,
                 },
             {
-                    path: AppRoutes.POST,
-                    element: <Post/>,
-                },
-        ]
+                path: AppRoutes.POST,
+                element: <Post/>,
+            },
+        ],
     }
 ]);

@@ -4,6 +4,5 @@ export const AppRoutes={
     TODOS:'/todos',
     ALBUMS:'/albums',
     COMMENTS:'/comments',
-    POSTS:'/posts',
-    POST:'/posts/:postId'
+    POST:'/posts/:id'
 }

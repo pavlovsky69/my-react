@@ -1,10 +1,10 @@
 import React from 'react';
 import {Post} from "./Post/Post";
-const Posts = ({postId}) => {
+const Posts = () => {
 
     return (
         <div>
-            {<Post postId={postId}/>}
+            {<Post/>}
         </div>
     );
 };
