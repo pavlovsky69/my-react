@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
+import {AppRoutes} from "../../../Routing/AppRoutes";
 
 const Post = () => {
     const [post, setPosts]=useState({})
@@ -14,6 +15,8 @@ const Post = () => {
             <div>id:{id}</div>
             <div>title:{title}</div>
             <div>body:{body}</div>
+            <Link to={AppRoutes.COMMENTS}>Back to all comments
+            </Link>
         </div>
     );
 };

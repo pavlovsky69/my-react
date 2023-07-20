@@ -6,6 +6,7 @@ import {Albums} from "../components/Albums/Albums";
 import {Comments} from "../components/Comments/Comments";
 import {Post} from "../components/Posts/Post/Post";
 
+
 const AppLayout = () => (
     <>
         <Navbar/>
@@ -20,7 +21,8 @@ export const router = createBrowserRouter ([
         children: [
             {
                 path: AppRoutes.MAIN,
-                element: <h1>Todos. Albums. Comments.</h1>
+                element: <h1 style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
+                    Todos. Albums. Comments.</h1>
             },
                 {
                     path: AppRoutes.TODOS,

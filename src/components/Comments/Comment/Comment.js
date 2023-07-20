@@ -12,7 +12,7 @@ const Comment = ({comment}) => {
             <div>body:{body}</div>
 
             {/*<button onClick={()=> navigate('posts/1', {relative:'path'})}> Get Post</button>*/}
-            <Link to={`/posts/${postId}`}>Post
+            <Link to={`/posts/${postId}`}>More about post
             </Link>
         </div>
     );
