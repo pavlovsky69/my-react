@@ -10,8 +10,8 @@ const Comments = () => {
     }, [])
     return (
         <div>
-            {comments.map(comment=><Comment key={comment.id} comment={comment} setPostId={setPostId}/> )}
             {postId &&<Posts postId={postId}/>}
+            {comments.map(comment=><Comment key={comment.id} comment={comment} setPostId={setPostId}/>)}
         </div>
     );
 };

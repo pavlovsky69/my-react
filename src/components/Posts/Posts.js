@@ -1,14 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Post} from "./Post/Post";
 const Posts = ({postId}) => {
-    const [post, setPosts]=useState({})
-    useEffect(()=>{
-        fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`).then(value => value.json()).then(value =>setPosts(value))
-    },)
+
     return (
         <div>
-            {post=><Post post={post}/>}
-
+            {<Post postId={postId}/>}
         </div>
     );
 };

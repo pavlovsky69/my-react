@@ -33,14 +33,11 @@ export const router = createBrowserRouter ([
             {
                     path: AppRoutes.COMMENTS,
                     element: <Comments/>,
-                children:[
-                    {
-                        path:':postId',
-                        element:<Post/>
-                    }
-                    ]
                 },
-
+            {
+                    path: AppRoutes.POST,
+                    element: <Post/>,
+                },
         ]
     }
 ]);
