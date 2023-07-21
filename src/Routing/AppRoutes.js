@@ -6,3 +6,4 @@ export const AppRoutes={
     COMMENTS:'/comments',
     POST:'/posts/:id'
 }
+

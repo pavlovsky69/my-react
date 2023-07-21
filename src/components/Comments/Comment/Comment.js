@@ -11,8 +11,6 @@ const Comment = ({comment}) => {
             <div>name:{name}</div>
             <div>email:{email}</div>
             <div>body:{body}</div>
-
-            {/*<Link className={'buttonComments'} to={`${AppRoutes.POST}${postId}`}>More about post</Link>*/}
             <Link className={'buttonComments'} to={`/posts/${postId}`}>More about post</Link>
         </div>
     );
