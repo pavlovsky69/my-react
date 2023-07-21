@@ -9,14 +9,14 @@ const Post = () => {
     const [post, setPosts]=useState({})
     const params=useParams()
 
-    useEffect(()=>{
-      postsService.getAll().then(({data})=> setPosts(data));
-    },[])
-
-
     // useEffect(()=>{
-    //     axios.get(`https://jsonplaceholder.typicode.com/posts/${params.id}`).then(({data})=> setPosts(data))
+    //   postsService.getAll().then(({data})=> setPosts(data));
     // },[])
+
+
+    useEffect(()=>{
+        axios.get(`https://jsonplaceholder.typicode.com/posts/${params.id}`).then(({data})=> setPosts(data))
+    },[])
 
     const{userId, id, title, body}=post;
     return (
