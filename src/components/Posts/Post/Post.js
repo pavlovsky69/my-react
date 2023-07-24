@@ -4,13 +4,16 @@ import {AppRoutes} from "../../../Routing/AppRoutes";
 import './Post.css'
 import {postsService} from "../../../apiService/postsService";
 import axios from "axios";
+import {PostDetails} from "./PostDetails/PostDetails";
 
 const Post = () => {
     const [post, setPosts]=useState({})
     const params=useParams()
 
+
+    // const {postId}=useParams();
     // useEffect(()=>{
-    //   postsService.getAll().then(({data})=> setPosts(data));
+    //   postsService.getById(postId).then(({data})=> setPosts(data));
     // },[])
 
 
@@ -18,23 +21,13 @@ const Post = () => {
         axios.get(`https://jsonplaceholder.typicode.com/posts/${params.id}`).then(({data})=> setPosts(data))
     },[])
 
-    const{userId, id, title, body}=post;
     return (
         <div>
-            <div>userId:{userId}</div>
-            <div>id:{id}</div>
-            <div>title:{title}</div>
-            <div>body:{body}</div>
-            <Link  className={'buttonPost'} to={AppRoutes.COMMENTS}>Back to all comments
-            </Link>
+            {post&&<PostDetails post={post}/>}
         </div>
     );
 };
-
 export {Post};
-
-
-
 
 
 

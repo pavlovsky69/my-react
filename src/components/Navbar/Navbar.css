@@ -15,3 +15,7 @@
     margin: 0 50px 0 50px;
     text-align: center;
 }
+
+.NavBarButton:focus{
+    background-color: red;
+}

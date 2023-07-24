@@ -1,9 +1,10 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import './Comment.css'
 
 const Comment = ({comment}) => {
     const {postId, id, name, email, body}=comment;
+    const navigate =useNavigate();
     return (
         <div>
             <div>postId:{postId}</div>
@@ -11,7 +12,7 @@ const Comment = ({comment}) => {
             <div>name:{name}</div>
             <div>email:{email}</div>
             <div>body:{body}</div>
-            <Link className={'buttonComments'} to={`/posts/${postId}`}>More about post</Link>
+            <button onClick={()=>navigate(`/posts/${postId}`)}>More about post</button>
         </div>
     );
 };
