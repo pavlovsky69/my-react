@@ -7,7 +7,7 @@ const MoviesListCard = ({movie}) => {
         <div>
             <div>original_title:{original_title}</div>
             <div>id:{id}</div>
-            <div>poster:{<img src={imagePoster}/>}</div>
+            <div>{<img src={imagePoster}/>}</div>
         </div>
     );
 };
