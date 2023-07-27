@@ -1,6 +1,5 @@
 import {createBrowserRouter} from "react-router-dom";
 import {Header} from "../components/Header/Header";
-import {MovieInfo} from "../components/MovieInfo/MovieInfo";
 import {MoviesList} from "../components/MoviesList/MoviesList";
 
 const router = createBrowserRouter ([
@@ -11,10 +10,6 @@ const router = createBrowserRouter ([
                 {
                     path:'moviesList',
                     element:<MoviesList/>
-                },
-                {
-                    path:'movieInfo',
-                    element:<MovieInfo/>
                 }
             ]
 

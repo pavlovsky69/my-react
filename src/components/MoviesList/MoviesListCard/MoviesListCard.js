@@ -1,9 +1,13 @@
 import React from 'react';
 
-const MoviesListCard = () => {
+const MoviesListCard = ({movie}) => {
+    const {id, original_title, backdrop_path}=movie;
+    const imagePoster=`https://image.tmdb.org/t/p/w500/${backdrop_path}`
     return (
         <div>
-            MoviesListCard 
+            <div>original_title:{original_title}</div>
+            <div>id:{id}</div>
+            <div>poster:{<img src={imagePoster}/>}</div>
         </div>
     );
 };
