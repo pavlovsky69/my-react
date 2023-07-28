@@ -3,6 +3,7 @@ import {Header} from "../components/Header/Header";
 import {MoviesList} from "../components/MoviesList/MoviesList";
 import {AppRoutes} from "./AppRoutes";
 import {MoviesPage} from "../components/MoviesList/MoviesPage/MoviesPage";
+import {GenresList} from "../components/GenreBadge/GenresList/GenresList";
 
 const router = createBrowserRouter ([
         {
@@ -18,6 +19,10 @@ const router = createBrowserRouter ([
                             element:<MoviesPage/>
                         }
                     ]
+                },
+                {
+                    path:AppRoutes.GenreList,
+                    element:<GenresList/>
                 }
             ]
 
