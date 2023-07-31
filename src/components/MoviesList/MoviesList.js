@@ -42,9 +42,9 @@ const MoviesList = () => {
         <div className={style.Head}>
             <div className={style.MoviesMain}>
                 {movies.map (movie => <MoviesListCard key={movie.id} movie={movie}/>)}
-                {/*<button onClick={()=>navigate(AppRoutes.MoviesPage)}>NEXT PAGE</button>*/}
+
             </div>
-            <div>
+            <div className={style.button_container}>
                 <button className={style.button} onClick={() => minus (count)}>PREVIOUS PAGE</button>
                 <button className={style.button} onClick={() => plus (count)}>NEXT PAGE</button>
             </div>
@@ -53,3 +53,7 @@ const MoviesList = () => {
 };
 
 export {MoviesList};
+
+
+
+{/*<button onClick={()=>navigate(AppRoutes.MoviesPage)}>NEXT PAGE</button>*/}

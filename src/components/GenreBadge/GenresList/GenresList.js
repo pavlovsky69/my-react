@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {apiKey} from "../../../constance/apiKey";
-import {baseUrl, urls} from "../../../constance/urls";
 import {GenreListCard} from "./GenreListCard/GenreListCard";
 
 const GenresList = () => {
@@ -31,7 +30,6 @@ const GenresList = () => {
 
     return (
         <div>
-            {/*{console.log(genres)}*/}
             {genres.map(genre=><GenreListCard key={genre.id} genre={genre}/>)}
         </div>
     );
