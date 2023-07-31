@@ -4,7 +4,7 @@ import {baseUrl, urls} from "../../../constance/urls";
 import {GenreListCard} from "./GenreListCard/GenreListCard";
 
 const GenresList = () => {
-    const [genres, setGenres]=useState({})
+    const [genres, setGenres]=useState([])
 
     const options = {
         method: 'GET',
@@ -21,7 +21,8 @@ const GenresList = () => {
         // fetch (baseUrl + urls.moviesGenre, options)
         fetch('https://api.themoviedb.org/3/genre/movie/list', options)
             .then (response => response.json ())
-            .then (response => setGenres(response))
+            .then (response => setGenres(response.genres))
+            // .then (response => setGenres(response))
 
             .catch (err => console.error (err));
 
@@ -30,7 +31,8 @@ const GenresList = () => {
 
     return (
         <div>
-            {/*{genres.map(genre=><GenreListCard key={genre.id} genre={genre}/>)}*/}
+            {/*{console.log(genres)}*/}
+            {genres.map(genre=><GenreListCard key={genre.id} genre={genre}/>)}
         </div>
     );
 };

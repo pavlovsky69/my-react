@@ -4,7 +4,7 @@ const GenreListCard = ({genre}) => {
     const {id, name}=genre;
     return (
         <div>
-            <p>{name}</p>
+            <p>{id},{name}</p>
         </div>
     );
 };
