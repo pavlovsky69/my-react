@@ -1,5 +1,6 @@
 import './App.css';
 import {ClassComponentPost} from "./components/ClassComponentPost/ClassComponentPost";
+import {ClassComponentComments} from "./components/ClassComponentComments/ClassComponentComments";
 
 const App=()=> {
 

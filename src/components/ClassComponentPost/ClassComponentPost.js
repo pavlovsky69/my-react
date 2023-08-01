@@ -1,5 +1,5 @@
 import React from "react";
-import {UserComponent} from "./UserComponent/UserComponent";
+import {PostComponent} from "./PostComponent/PostComponent";
 class ClassComponentPost extends React.Component {
 
     state = {
@@ -21,7 +21,7 @@ class ClassComponentPost extends React.Component {
         const {data}= this.state;
         return (
             <div>
-                {data.map((post)=><UserComponent key={post.id} post={post}/>
+                {data.map((post)=><PostComponent key={post.id} post={post}/>
                 )}
             </div>
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-class UserComponent extends React.Component {
+class PostComponent extends React.Component {
     constructor(props) {
         super (props);
     }
@@ -19,4 +19,4 @@ class UserComponent extends React.Component {
 
 
 
-export {UserComponent};
+export {PostComponent};
