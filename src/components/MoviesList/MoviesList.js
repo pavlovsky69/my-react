@@ -29,7 +29,6 @@ const MoviesList = () => {
         }
     };
 
-    // fetch (`https://api.themoviedb.org/3/discover/movie?page=${count}`, options)
 
     useEffect (() => {
         fetch (baseUrl + urls.moviesList.byId (count), options)
@@ -53,7 +52,3 @@ const MoviesList = () => {
 };
 
 export {MoviesList};
-
-
-
-{/*<button onClick={()=>navigate(AppRoutes.MoviesPage)}>NEXT PAGE</button>*/}
