@@ -1,12 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {Outlet, useParams} from "react-router-dom";
-import {baseUrl, urls} from "../../constance/urls";
+import {useParams} from "react-router-dom";
 import {apiKey} from "../../constance/apiKey";
-import style from "../MoviesList/MoviesListCard/MovieListCard.module.scss";
 
 const MovieInfo = () => {
 const params =useParams()
-    const [data, setData] = useState ([])
+    const [data, setData] = useState ({})
 
     const options = {
         method: 'GET',
@@ -26,14 +24,16 @@ const params =useParams()
             .then (response => setData(response))
             .catch (err => console.error (err));
     }, [])
+
     return (
         <div>
-            <div>Budget: {data.budget}</div>
             <p>{data.title}</p>
             <p>{data.id}</p>
-            <p>popularity: {data.popularity}</p>
-            <p>release date: {data.release_date}</p>
-            <p>vote average: {data.vote_average}</p>
+            {console.log(data.genres)}
+            {/*<div>Budget: {data.budget}</div>*/}
+            {/*<p>popularity: {data.popularity}</p>*/}
+            {/*<p>release date: {data.release_date}</p>*/}
+            {/*<p>vote average: {data.vote_average}</p>*/}
         </div>
     );
 };
