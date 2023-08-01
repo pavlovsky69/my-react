@@ -22,7 +22,7 @@ const router = createBrowserRouter ([
                     ]
                 },
                 {
-                    path:AppRoutes.MovieInfo,
+                    path:'/movieInfo/:id',
                     element:<MovieInfo/>
                 },
                 {

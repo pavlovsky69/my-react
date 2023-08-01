@@ -25,7 +25,7 @@ const MoviesListCard = ({movie}) => {
                 <img className={style.imagePoster} src={imagePoster} alt="image" width="400px"/>
             </div>
             {/*<button onClick={()=>navigate(AppRoutes.MovieInfo +`/${id}`)}>More Info</button>*/}
-            <button onClick={()=>navigate(AppRoutes.MovieInfo+(id))}>More Info</button>
+            <button onClick={()=>navigate('/movieInfo/'+(id))}>More Info</button>
         </div>
     );
 };

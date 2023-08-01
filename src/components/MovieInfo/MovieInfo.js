@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Outlet, useParams} from "react-router-dom";
 import {baseUrl, urls} from "../../constance/urls";
 import {apiKey} from "../../constance/apiKey";
+import style from "../MoviesList/MoviesListCard/MovieListCard.module.scss";
 
 const MovieInfo = () => {
 const params =useParams()
@@ -19,16 +20,20 @@ const params =useParams()
     };
 
     useEffect (() => {
-        fetch (baseUrl + urls.moviesList.base, options)
+        // fetch (baseUrl + urls.moviesList.base, options)
+        fetch (`https://api.themoviedb.org/3/movie/${params.id}`, options)
             .then (response => response.json ())
             .then (response => setData(response))
             .catch (err => console.error (err));
     }, [])
     return (
         <div>
-            {console.log(params.id)}
-            AAA
-            <Outlet/>
+            <div>Budget: {data.budget}</div>
+            <p>{data.title}</p>
+            <p>{data.id}</p>
+            <p>popularity: {data.popularity}</p>
+            <p>release date: {data.release_date}</p>
+            <p>vote average: {data.vote_average}</p>
         </div>
     );
 };
