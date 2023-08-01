@@ -29,11 +29,13 @@ const params =useParams()
         <div>
             <p>{data.title}</p>
             <p>{data.id}</p>
-            {console.log(data.genres)}
+            {/*<p>{data?.genres[0].name}</p>*/}
             {/*<div>Budget: {data.budget}</div>*/}
             {/*<p>popularity: {data.popularity}</p>*/}
             {/*<p>release date: {data.release_date}</p>*/}
             {/*<p>vote average: {data.vote_average}</p>*/}
+
+
         </div>
     );
 };
