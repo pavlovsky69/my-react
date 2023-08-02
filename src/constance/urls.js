@@ -2,6 +2,7 @@ const baseUrl = 'https://api.themoviedb.org/3';
 
 const moviesList = '/discover/movie';
 const moviesGenre = '/genre/movie/list';
+const moviesPoster='https://image.tmdb.org/t/p/w500'
 
 const urls = {
     moviesList:{
@@ -10,6 +11,9 @@ const urls = {
     },
     moviesGenre:{
         base:moviesGenre
+    },
+    moviesPoster:{
+        base: moviesPoster
     }
 }
 

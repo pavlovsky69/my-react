@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import {apiKey} from "../../constance/apiKey";
+import style from './MovieInfo.module.scss'
+import {urls} from "../../constance/urls";
 
 const MovieInfo = () => {
-const params =useParams()
+    const params = useParams ()
     const [data, setData] = useState ({})
-
+    const [genres, setGenres] = useState ([])
     const options = {
         method: 'GET',
         headers: {
@@ -21,21 +23,26 @@ const params =useParams()
         // fetch (baseUrl + urls.moviesList.base, options)
         fetch (`https://api.themoviedb.org/3/movie/${params.id}`, options)
             .then (response => response.json ())
-            .then (response => setData(response))
+            .then (response => {
+                setData (response)
+                setGenres (response.genres)
+            })
             .catch (err => console.error (err));
     }, [])
 
     return (
         <div>
-            <p>{data.title}</p>
-            <p>{data.id}</p>
-            {/*<p>{data?.genres[0].name}</p>*/}
-            {/*<div>Budget: {data.budget}</div>*/}
-            {/*<p>popularity: {data.popularity}</p>*/}
-            {/*<p>release date: {data.release_date}</p>*/}
-            {/*<p>vote average: {data.vote_average}</p>*/}
-
-
+            <p>Title: {data.title}</p>
+            <p>id: {data.id}</p>
+            <div className={style.genres}> Genres: {genres.map (
+                (item) => <p key={item.id} className={style.oneGenre}>{item.name},</p>)}</div>
+            <div>Budget: {data.budget}</div>
+            <p>Popularity: {data.popularity}</p>
+            <p>Release date: {data.release_date}</p>
+            <p>Vote average: {data.vote_average}</p>
+            <p>Status: {data.status}</p>
+            <img src={urls.moviesPoster.base+data.backdrop_path} alt="logo"/>
+            {/*/nHf61UzkfFno5X1ofIhugCPus2R.jpg*/}
         </div>
     );
 };
