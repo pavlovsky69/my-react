@@ -4,13 +4,14 @@ import {AppRoutes} from "./AppRoutes";
 import {Navbar} from "../components/Navbar/Navbar";
 import {ClassComponentComments} from "../components/ClassComponentComments/ClassComponentComments";
 import {CarsComponent} from "../components/CarsComponent/CarsComponent";
+import {MainLayout} from "../components/MainLayout";
 
 
 const router =createBrowserRouter(
     [
         {
             path: AppRoutes.MAIN,
-            element: <Navbar/>,
+            element: <MainLayout/>,
             children:[
                 {
                     path: AppRoutes.POSTS,

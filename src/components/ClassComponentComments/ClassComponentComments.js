@@ -1,5 +1,4 @@
 import React from "react";
-import {PostComponent} from "../ClassComponentPost/PostComponent/PostComponent";
 import {ClassComponentComment} from "./ClassComponentComment/ClassComponentComment";
 class ClassComponentComments extends  React.Component{
     state = {

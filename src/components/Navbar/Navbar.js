@@ -15,7 +15,6 @@ const Navbar = () => {
                     <NavLink className={style.link} to={AppRoutes.CARS}>ALL CARS</NavLink>
                 </div>
             </div>
-            <Outlet/>
         </div>
 
     );
