@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from 'react';
+import React, {useCallback, useMemo, useState} from 'react';
 import Info from "../Info/Info";
 
 const TestMemo = (data) => {
@@ -22,7 +22,9 @@ const TestMemo = (data) => {
         setCount (type === 'decrement' ? count - 1 : count + 1)
     };
 
-    const addInfo = () => setInfo ([...info, "new Info"])
+    // const addInfo = () => setInfo ([...info, "new Info"])
+
+    const addInfo = useCallback(()=>{setInfo ([...info, "new Info"])}, [info])
 
 
     return (
@@ -32,6 +34,8 @@ const TestMemo = (data) => {
             <p>Count: {count}</p>
             <p>Calculation: {calculation}</p>
             <Info info={info} addInfo={addInfo}/>
+
+            
         </div>
     );
 };
