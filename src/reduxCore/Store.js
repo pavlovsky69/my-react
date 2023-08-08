@@ -13,6 +13,6 @@ const composeEnhancers=composeWithDevTools({
     traceLimit:25
 })
 
-const store=createStore(rootReducer, composeEnhancers())
+const store=createStore (rootReducer, composeEnhancers())
 
 export default store

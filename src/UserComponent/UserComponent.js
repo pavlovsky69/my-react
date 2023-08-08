@@ -15,12 +15,20 @@ const UserComponent = () => {
             .then (data => dispatch (userActions.setUsers (data)))
     }, []);
 
+    
 
     const getMore = () => {
         dispatch (userActions.setIsLoading (true));
         fetch (info)
             .then (resp => resp.json ())
-            .then (data => dispatch (userActions.addUsers (data)))
+            .then (data => dispatch (userActions.addUsers(data)))
+    }
+
+    const goBack = () => {
+        dispatch(userActions.setIsLoading(true));
+        fetch(info)
+            .then(resp => resp.json())
+            .then(data => dispatch(userActions.backUser(data)))
     }
 
     return (
@@ -31,6 +39,7 @@ const UserComponent = () => {
                 : <>
                     <p>{info}</p>
                     <p onClick={getMore} style={{cursor:"pointer"}}>Get next</p>
+                    <p onClick={goBack} style={{cursor:"pointer"}}>Go back</p>
                     {users.map ((user) =>
                         (
                             <div key={user.id}>
