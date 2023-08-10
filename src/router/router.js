@@ -1,12 +1,28 @@
-import {createBrowserRouter} from "react-router-dom";
-import App from "../App";
-import {UserComponent} from "../UserComponent/UserComponent";
+import {createBrowserRouter, Navigate} from "react-router-dom";
+import {MainLayout} from "../layouts";
+import {CharactersPage, EpisodesPage} from "../pages";
 
-const router=createBrowserRouter(
+
+const router = createBrowserRouter (
     [
         {
-            path:'/',
-            element:<UserComponent/>
+            path: '',
+            element: <MainLayout/>,
+            children: [
+                {
+                    index: true,
+                    element: <Navigate to={'episodes'}/>
+                },
+                {
+                    path: 'episodes',
+                    element: <EpisodesPage/>
+                },
+                {
+                    path: 'characters',
+                    element: <CharactersPage/>
+                }
+            ]
+
         }
     ]
 )

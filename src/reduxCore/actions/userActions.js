@@ -1,4 +1,4 @@
-import UsersReducer, {UserActionTypes} from "../usersReducer";
+import UsersReducer, {UserActionTypes} from "../reducers/usersReducer";
 
 export const userActions = {
     setUsers: (data) => ({type: UserActionTypes.SET_USERS, payload: data}),
