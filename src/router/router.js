@@ -2,6 +2,8 @@ import {createBrowserRouter, Navigate} from "react-router-dom";
 import {MainLayout} from "../layouts";
 import {CharactersPage, EpisodesPage} from "../pages";
 import {UserComponent} from "../UserComponent/UserComponent";
+import {NewComponent} from "../NewComponent/NewComponent.tsx";
+
 
 
 const router = createBrowserRouter (
@@ -23,7 +25,10 @@ const router = createBrowserRouter (
             //         element: <CharactersPage/>
             //     }
             // ]
-
+        },
+        {
+            path: 'NewComponent',
+            element: <NewComponent/>
         }
     ]
 )

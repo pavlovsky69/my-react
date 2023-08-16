@@ -2,6 +2,10 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {getMoreData, getRickMorty, userActions} from "../reduxCore/actions/userActions";
 
+
+
+
+
 const UserComponent = () => {
     const dispatch = useDispatch ();
     const users = useSelector ((store) => store.users.results)
